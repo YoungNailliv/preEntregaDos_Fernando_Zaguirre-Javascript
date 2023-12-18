@@ -12,7 +12,7 @@ class Cliente {
     constructor(){
         this.idCliente = idCliente
         this.fechaIngreso = new Date().toDateString();
-        this.nombreCliente = prompt("Ingresa el numbre del cliente:");
+        this.nombreCliente = prompt("Ingresa el nombre del cliente:");
         this.rutCliente = prompt("Ingresa el rut  del cliente:");
         this.direccionCliente = prompt("Ingresa la direccion del cliente:");
         this.emailCliente = prompt("ingresa el correo del cliente:");
@@ -79,7 +79,7 @@ class Trabajador {
         this.idTrabajador = idTrabajador;
         this.fechaIngresoTrabajador = new Date().toDateString();
         this.inicioContrato = prompt("Ingresa fecha del inicio del contrato")
-        this.nombreTrabajador = prompt("Ingresa el numbre del Trabajador:");
+        this.nombreTrabajador = prompt("Ingresa el nombre del Trabajador:");
         this.rutTrabajador = prompt("Ingresa el rut  del Trabajador:");
         this.cargoTrabajador = prompt("Ingresa cargo del trabajador:");
     };
@@ -195,17 +195,14 @@ const checkCosto = () => {
 }
 //Menu de las opciones de los estados de la ot
 const estadosOrdenesDeTrabajo = () => {
-    let nuevoEstado = parseInt(prompt("Elige el nuevo estado de la Ot\n1.- Pagada\n2.-Pendiente\n3.-Nula\n4.-Dejar En Blanco"));
+    let nuevoEstado = parseInt(prompt("Elige el nuevo estado de la Ot\n1.- Pagada\n2.-Pendiente\n3.-Nula"));
     switch (nuevoEstado) {
         case 1:
             return "Pagada";
         case 2:
             return "Pendiente";
         case 3:
-            return "Nula";
-        case 4:
-            return ""
-    
+            return "Nula";    
         default:
             alert("Ingresa una opcion correcta");
             estadosOrdenesDeTrabajo();
@@ -246,10 +243,10 @@ const cambiarDescripcionOt = () => {
     let numeroOtACambiar = parseInt(prompt("Ingresa el numero de la OT que deseas cambiar la descripcion: "));
     let otEncontrada = ordenesDeTrabajos.find((ot) => ot.numeroOt === numeroOtACambiar);
     if (otEncontrada){
-        let nuevaDescripcion = prompt("Ingresa una nueva descripcion")
+        let nuevaDescripcion = prompt("Ingresa una nueva descripcion");
         otEncontrada.cambiarDescripcion(nuevaDescripcion);
     }else{
-        alert(`No se encontro la ot numero ${numeroOt}`)
+        alert(`No se encontro la ot numero ${numeroOt}`);
     };
 }
 
